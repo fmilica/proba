@@ -377,6 +377,9 @@ $(document).ready( function () {
     })
     // Doctor patients
     $('#doctorPatients').click(function() {
+		if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.doctor-patients').show()
         document.body.scrollTop = 0
