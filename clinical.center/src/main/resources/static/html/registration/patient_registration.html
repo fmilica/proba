@@ -1,0 +1,178 @@
+<html>
+<head>
+    <!-- bootstrap, jquery -->
+    <script src="../../js/library/jquery.min.js" ></script>
+    <link href="../../js/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- theme style -->
+    <link href="../../css/theme/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+    <link href="../../css/theme/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/theme/responsive.css" rel="stylesheet" type="text/css" />
+
+    <!-- Loading script files -->
+    <script src="../../js/library/jquery-validation/js/jquery.validate.min.js" ></script>
+    <script src="../../js/library/jquery-validation/js/additional-methods.min.js" ></script>
+    <script src="../../registration.js"></script>
+
+    <!-- icons -->
+    <link href="../../css/theme/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Project bound files -->
+    <link href="../../css/main.css" rel="stylesheet" />
+
+    <!-- Validate -->
+    <link rel="stylesheet" type="text/css" href="../../css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="../../img/icons/logo/favicon.png"/>
+    
+    <title>Patient Registration - The Good Shepherd</title>
+</head>
+<body>
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!-- Header -->
+            <div class="page-bar">
+                <div class="page-title-breadcrumb">
+                    <div class="pull-left">
+                        <div class="page-title">Patient registration</div>
+                    </div>
+                </div>
+            </div>
+            <!-- End header -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="card card-box">
+                        <div class="card-head">
+                            <header>Basic Information</header>
+                        </div>
+                        <div class="card-body" id="bar-parent">
+                            <form id="patinetRegistration" class="form-horizontal">
+                                <div class="form-body">
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Email address
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="email" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            First Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="name" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Last Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="surname" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Password
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+                                            <input type="text" id="password" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row"  >
+                                        <label class="control-label col-md-3">
+                                            Confirm Password
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+                                            <input type="text" id="passwordConfirm" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Gender
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <select class="form-control input-height" id="gender">
+                                                <option selected="selected" value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Date Of Birth
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                        <input id="dateOfBirth" type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Security Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Must be a number!">
+                                            <input type="text" id="securityNumber" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Phone Number
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="phoneNumber" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Address
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="address" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            City
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="city" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Country
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="country" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="offset-md-3 col-md-9 form-buttons">
+                                            <button id="register" type="button" class="btn btn-info">Register</button>
+                                            <button id="cancel" type="button" class="btn btn-default">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page content -->
+    
+</body>
+</html>

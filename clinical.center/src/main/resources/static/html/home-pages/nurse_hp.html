@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<title>The Good Shepherd</title>
+
+	<!-- bootstrap, jquery -->
+	<script src="../../js/library/jquery.min.js" ></script>
+	<link href="../../js/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../js/library/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- theme style -->
+	<link href="../../css/theme/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="../../css/theme/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/theme-color.css" rel="stylesheet" type="text/css" />
+
+	<!-- jedan tag -->
+	<link href="../../css/theme/material_style.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/material.indigo-pink.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- icons -->
+	<link href="../../css/theme/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Project bound files -->
+	<link href="../../css/main.css" rel="stylesheet" />
+	<script src="../../js/main_hp.js"></script>
+
+	<!-- FullCalendar -->
+	<link href='../../css/fullcalendar/core/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/daygrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/timegrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/list/main.css' rel='stylesheet' />
+
+	<script src='../../js/library/fullcalendar/core/main.js'></script>
+	<script src='../../js/library/fullcalendar/interaction/main.js'></script>
+	<script src='../../js/library/fullcalendar/daygrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/timegrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/list/main.js'></script>
+	
+	<!-- for tables -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	
+	<!-- Validate -->
+	<link rel="stylesheet" type="text/css" href="../../css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="../../img/icons/logo/favicon.png"/>
+	
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-cyan">
+    <div class="page-wrapper">
+        <!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="#">
+                    <img class="logo-icon" src="../../img/icons/logo/logo_plain.png">
+                    <span class="logo-default" >The Good Shepherd</span> </a>
+                </div>
+                <!-- logo end -->
+
+				<!-- start banner -->
+				<span class="banner">Ongoing COVID-19 pandemic #StayHome #StaySafe</span>
+				<!-- end banner -->
+
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="PA" src="../../img/icons/user.png" style=" border-radius: 90%; border:10px;"/>
+                                <span id="shownNameSurname" class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a id="dropdownProfile" class="n-profile">
+										<img class="icon" src="../../img/icons/profile.png">
+										My Profile
+									</a>
+                                </li>
+                                <li>
+                                    <a id="dropdownChangePass">
+										<img src="../../img/settings.svg">
+										Change Password
+                                    </a>
+								</li>
+								<li class="divider"></li>
+                                <li>
+                                    <a id="dropdownLogout">
+										<img class="icon" src="../../img/icons/logout.png">
+										Logout	
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container ">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel">
+	                                <div class="pull-left image">
+	                                    <img src="../../img/icons/user.png" class="img-circle user-img-circle" alt="User Image" />
+	                                </div>
+	                                <div class="pull-left info">
+	                                    <p id="bigNameSurname" style="font-size: 16px;"></p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a id="homePage" class="nav-link nav-toggle">
+	                                <img class="icon" src="../../img/icons/home.png">
+	                                <span class="title">Home Page</span>
+	                                <span class="arrow"></span>
+	                            </a>
+                            </li>
+                            <li class="nav-item">
+	                            <a id="nurseVerifyPrescription" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+                                    <span class="title">Verify prescription</span>
+                                    <!--<span class="notification">&nbsp;4&nbsp;</span>-->
+									<span class="arrow"></span>
+								</a>
+							</li>
+                            <li class="nav-item">
+	                            <a id="nursePatients" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/clinics.png">
+									<span class="title">Patients</span>
+									<span class="arrow"></span>
+	                            </a>
+							</li>
+	                        <li class="nav-item">
+	                            <a id="medicalCalendar" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/appointment.png">
+									<span class="title">Calendar</span>
+									<span class="arrow"></span>
+	                            </a>
+							</li>
+							<li class="nav-item">
+	                            <a id="medicalVacation" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+									<span class="title">Vacation/Paid leave</span>
+									<span class="arrow"></span>
+								</a>
+                            </li>
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+
+			<div class="content-container">
+				<!-- Home page content-->
+				<div class="content home-page">
+					<!-- start welcoming text -->
+					<div class="text">
+						<h1 align="center">Welcome to The Good Shepherd Clinics</h1>
+						<img class="text-logo" src="../../img/icons/logo/logo_text.png">
+						<h2 align="center">Your mind and body deserve only the best!</h2>
+					</div>
+					<!-- end welcoming text -->
+
+				</div>
+
+				<!-- Nurse change password -->
+				<div class="content change-password">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Change password</header>
+							</div>
+							<div class="card-body">
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="password" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Confirm Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="passwordConfirm" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="offset-md-3 col-md-12 form-buttons">
+											<button id="changePasswordBtn" type="submit" class="btn btn-info">Save changes</button>
+											<button id="cancelChangePasswordBtn" type="submit" class="btn btn-info">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Nurse profile content -->
+				<div class="content nurse-profile">
+					<div class="col-md-5">
+						<div class="card card-topline-theme">
+							<div class="card-body no-padding height-9">
+								<div class="row">
+									<div class="profile-userpic">
+										<img src="../../img/icons/user.png" class="img-responsive" alt="">
+									</div>
+								</div>
+								<div class="profile-usertitle">
+									<div id="fullNameBig" class="profile-usertitle-name fullName"></div>
+									<hr class="edit-personal">
+								</div>
+							</div>
+							<div class="edit-profile">
+								<button id="editNurseProfile" type="button" class="btn btn-info edit">Edit Profile</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="card">
+							<div class="card-head card-topline-theme">
+								<header>About Me</header>
+							</div>
+							<div class="card-body no-padding height-9">
+								<div class="user-btm-box">
+									<div class="row text-center m-t-10">
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<strong>Full name</strong>
+												<p id = "fullName" class="fullName"></p>
+											</div>
+										</div>
+										<hr>
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<strong>Email</strong>
+												<p id="email"></p>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Gender</strong>
+											<p id="gender"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Date of birth</strong>
+											<p id = "dateOfBirth"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Phone number</strong>
+											<p id="phoneNumber"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Security number</strong>
+											<p id = "securityNumber"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12"><strong>Address</strong>
+											<p id="address"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Nurse edit profile content -->
+				<div class="content nurse-edit-profile">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Edit personal information</header>
+							</div>
+							<div class="card-body">
+								<div class="form-body">
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Email address
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input disabled type="text" id="emailEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            First Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="nameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Last Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="surnameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Gender
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <select class="form-control input-height" id="genderEdit">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Date Of Birth
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                        <input id="dateOfBirthEdit" type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Security Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Must be a number!">
+                                            <input disabled type="text" id="securityNumberEdit" data-required="1"  class="form-control input-height"/>
+                                        </div>
+									</div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Phone Number
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="phoneNumberEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Address
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="addressEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            City
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="cityEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Country
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="countryEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+									</div>
+									<div class="form-actions">
+										<div class="row">
+											<div class="offset-md-3 col-md-12 form-buttons">
+												<button id="confirmEdit" type="submit" class="btn btn-info">Save changes</button>
+												<button id="cancelEdit" type="button" class="btn btn-default">Cancel</button>
+											</div>
+										</div>
+									</div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Verify prescription content -->
+				<div class="content nurse-verifyPrescription">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Prescription Verification</header>
+									</div>
+									<div class="card-body">
+										<table id="verifyMedicine" class="display">
+											<thead>
+												<tr>
+													<th>Patient</th>
+													<th>Doctor</th>
+													<th>Diagnose</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody></tbody>
+											<tfoot>
+												<tr>
+													<th>Patient</th>
+													<th>Doctor</th>
+													<th>Diagnosis</th>
+													<th>Action</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Nurse patients content -->
+				<div class="content nurse-patients">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Patients</header>
+									</div>
+									<div class="card-body">
+										<div class="form-group row">
+											<label class="control-label col-md-1">
+												Name:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="patientName" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Surname:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="patientSurname" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Security Number:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="patientSecurityNumber" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<div class="col-md-2">
+												<button id="filterPatients" type="submit" class="btn btn-info doctor-filter-btn">Filter</button>
+											</div>
+										</div>
+										<table id="patientsTable" class="display">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Security Number</th>
+													<th>View profile</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Security Number</th>
+													<th>View profile</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- View patient profile -->
+				<div class="content nurse-patient-profile">
+					<!-- basic patient information card -->
+					<div class="col-md-5">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>About the patient</header>
+							</div>
+							<div class="card-body">
+								<div class="user-btm-box">
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Full name</strong>
+											<p id="fullNamePatient"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Email</strong>
+											<p id="emailPatient"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Gender</strong>
+											<p id="genderPatient"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Date of birth</strong>
+											<p id = "dateOfBirthPatient"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Phone number</strong>
+											<p id="phoneNumberPatient"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Security number</strong>
+											<p id = "securityNumberPatient"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12"><strong>Address</strong>
+											<p id="addressPatient"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Medical record -->
+					<div class="col-md-7">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Medical record</header>
+								<button id="patientBack" type="button" class="btn back-btn">Back</button>
+							</div>
+							<div class="card-body">
+								<div class="medical-record">
+									<h4 id="generalReport"></h5>
+									<h5>Height<span id = "height" class="pull-right"></span></h5>
+									<h5>Weight<span id = "weight" class="pull-right"></span></h5>
+									<h5>Blood pressure<span id = "bloodPressure" class="pull-right"></span></h5>
+									<h5>Blood type<span id = "bloodType" class="pull-right"></span></h5>
+									<h5>Allergies<span id = "allergies" class="pull-right"></span></h5>
+								</div>
+								<!-- Medical reports -->
+								<hr>
+								<div class="app-btns">
+									<button id="changeRecord" type="button" class="btn btn-info app-btn">Modify Record</button>
+									<button id="startAppointment" type="button" class="btn btn-info app-btn">Start Appointment</button>	
+								</div>
+								<!--table-->
+								<div id="medicalReport" class="row">
+									<div class="col-md-12">
+										<div class="card card-topline-theme">
+											<div class="card-head">
+												<header>Medical reports</header>
+											</div>
+											<div class="card-body">
+												<table id = "medicalReports" class="table table-striped table-bordered table-hover table-checkable order-column" style="width: 100%" id="example4">
+													<thead>
+														<tr>
+															<th>Description</th>
+															<th>Diagnosis</th>
+															<th>Medicine</th>
+														</tr>
+													</thead>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Medical personnel calendar content -->
+				<div class="content medical-calendar">
+					<!-- start calendar -->
+					<div class="calendar" id="calendar"></div>
+					<!-- end calendar -->
+				</div>
+
+				<!-- Medical personnel vacation content -->
+				<div class="content medical-vacation">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Vacation/Leave Requests</header>
+									</div>
+									<div class="card-body">
+										<button id="makeVacationRequest" class="btn btn-info add-button">Create Vacation Request</button>
+										<table id="vacationTable" class="display">
+											<thead>
+												<tr>
+													<th>Start Date</th>
+													<th>End Date</th>
+													<th>Type</th>
+													<th>Approved</th>
+												</tr>
+											</thead>
+											<tbody></tbody>
+											<tfoot>
+												<tr>
+													<th>Start Date</th>
+													<th>End Date</th>
+													<th>Type</th>
+													<th>Approved</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<!-- Create Leave Request -->
+				<div class="content nurse-create-leave-request">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Create Leave Request - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Start Date
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+				                                        <input id="startDate" type="date" class="form-control">
+				                                    </div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														End Date
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+				                                       <input id="endDate" type="date" class="form-control">
+				                                    </div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Type
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+				                                       <select class="form-control input-height" id="leaveType">
+		                                                	<option selected="selected" value="Paid">Paid</option>
+		                                               	 	<option value="Vacation">Vacation</option>
+		                                               </select>
+				                                    </div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="create_leaveRequest" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_leaveRequest" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+				
+			<!-- end page content -->
+		</div>
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2020 &copy; The Good Shepherd Clinics - Your health care companion
+            </div>
+            <div class="scroll-to-top">
+                <img src="../../img/uparrow1.svg">
+			</div>
+		</div>
+    <!-- end footer -->
+	</div>
+	<script src="../../nurse.js"></script>
+</body>
+</html>

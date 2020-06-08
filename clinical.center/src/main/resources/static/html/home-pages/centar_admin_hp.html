@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<title>The Good Shepherd</title>
+
+	<!-- bootstrap, jquery -->
+	<script src="../../js/library/jquery.min.js" ></script>
+	<link href="../../js/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../js/library/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- theme style -->
+	<link href="../../css/theme/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="../../css/theme/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/theme-color.css" rel="stylesheet" type="text/css" />
+
+	<!-- jedan tag da fak jebse -->
+	<link href="../../css/theme/material_style.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/material.indigo-pink.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- icons -->
+	<link href="../../css/theme/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Project bound files -->
+	<link href="../../css/main.css" rel="stylesheet" />
+	<script src="../../js/main_hp.js"></script>
+
+	<!-- FullCalendar -->
+	<link href='../../css/fullcalendar/core/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/daygrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/timegrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/list/main.css' rel='stylesheet' />
+
+	<script src='../../js/library/fullcalendar/core/main.js'></script>
+	<script src='../../js/library/fullcalendar/interaction/main.js'></script>
+	<script src='../../js/library/fullcalendar/daygrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/timegrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/list/main.js'></script>
+	
+	<!-- for tables -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+	<!-- Validate -->
+	<link rel="stylesheet" type="text/css" href="../../css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="../../img/icons/logo/favicon.png"/>
+
+	<!-- Select2 -->
+	<link href="../../js/library/select2/css/select2.min.css" rel="stylesheet" />
+	<script src="../../js/library/select2/js/select2.min.js"></script>
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-cyan">
+    <div class="page-wrapper">
+        <!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="#">
+                    <img class="logo-icon" src="../../img/icons/logo/logo_plain.png">
+                    <span class="logo-default">The Good Shepherd</span> </a>
+                </div>
+                <!-- logo end -->
+
+				<!-- start banner -->
+				<span class="banner">Ongoing COVID-19 pandemic #StayHome #StaySafe</span>
+				<!-- end banner -->
+
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="PA" src="../../img/icons/user.png" style=" border-radius: 90%; border:10px;"/>
+                                <span id="shownNameSurname" class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+									<a id="dropdownProfile" class="cca-profile">
+										<img class="icon" src="../../img/icons/profile.png">
+										My Profile
+									</a>
+                                </li>
+                                <li>
+                                    <a id="dropdownChangePass">
+										<img src="../../img/settings.svg">
+										Change Password
+                                    </a>
+								</li>
+								<li class="divider"></li>
+                                <li>
+                                    <a id="dropdownLogout">
+										<img class="icon" src="../../img/icons/logout.png">
+										Logout	
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container ">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel">
+	                                <div class="pull-left image">
+	                                    <img src="../../img/icons/user.png" class="img-circle user-img-circle" alt="User Image" />
+	                                </div>
+	                                <div class="pull-left info">
+	                                    <p id="bigNameSurname" style="font-size: 16px;"></p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a id="homePage" class="nav-link nav-toggle">
+	                                <img class="icon" src="../../img/icons/home.png">
+	                                <span class="title">Home Page</span>
+	                                <span class="arrow"></span>
+	                            </a>
+	                        </li>
+                            <li class="nav-item">
+	                            <a id="clinics" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/clinics.png">
+									<span class="title">Clinics</span>
+									<span class="arrow"></span>
+	                            </a>
+							</li>
+	                        <li class="nav-item">
+	                            <a id="clinicAdmins" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/appointment.png">
+									<span class="title">Clinic Admins</span>
+									<span class="arrow"></span>
+	                            </a>
+							</li>
+							<li class="nav-item">
+	                            <a id="centerAdmins" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+									<span class="title">Clinical Center Admins</span>
+									<span class="arrow"></span>
+								</a>
+                            </li>
+                            <li class="nav-item">
+	                            <a id="registrationReq" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+									<span class="title">Registration requests</span>
+									<span class="arrow"></span>
+								</a>
+							</li>
+							<li class="nav-item">
+	                            <a id="codeBooks" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+									<span class="title">Code Books</span>
+									<span class="arrow"></span>
+								</a>
+								<ul id="sub" class="sub-menu">
+	                                <li class="nav-item">
+	                                    <a id="diagnosisBook" class="nav-link">
+	                                        <span class="title">Diagnosis Book</span>
+	                                    </a>
+									</li>
+									<li class="nav-item">
+	                                    <a id="prescriptionBook" class="nav-link">
+	                                        <span class="title">Prescription Book</span>
+	                                    </a>
+									</li>
+								</ul>
+							</li>
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+
+			<div class="content-container">
+				<!-- Home page content -->
+				<div class="content home-page">
+					<!-- start welcoming text -->
+					<div class="text">
+						<h1 align="center">Welcome to The Good Shepherd Clinics</h1>
+						<img class="text-logo" src="../../img/icons/logo/logo_text.png">
+						<h2 align="center">Your mind and body deserve only the best!</h2>
+					</div>
+					<!-- end welcoming text -->
+
+					<!-- start calendar
+					<div class="calendar" id="calendar"></div>
+					end calendar -->
+				</div>
+				
+				<!-- Clinical center admin change password -->
+				<div class="content change-password">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Change password</header>
+							</div>
+							<div class="card-body">
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="password" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Confirm Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="passwordConfirm" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="offset-md-3 col-md-12 form-buttons">
+											<button id="changePasswordBtn" type="submit" class="btn btn-info">Save changes</button>
+											<button id="cancelChangePasswordBtn" type="submit" class="btn btn-info">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Clinical centre admin profile content -->
+				<div class="content clinical-centre-admin-profile">
+					<div class="col-md-5">
+						<div class="card card-topline-theme">
+							<div class="card-body no-padding height-9">
+								<div class="row">
+									<div class="profile-userpic">
+										<img src="../../img/icons/user.png" class="img-responsive" alt="">
+									</div>
+								</div>
+								<div class="profile-usertitle">
+									<div id="fullNameBig" class="profile-usertitle-name fullName"></div>
+									<hr class="edit-personal">
+								</div>
+							</div>
+							<div class="edit-profile">
+								<button id="editClinicalCentreAdminProfile" type="button" class="btn btn-info edit">Edit Profile</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="card">
+							<div class="card-head card-topline-theme">
+								<header>About Me</header>
+							</div>
+							<div class="card-body no-padding height-9">
+								<div class="user-btm-box">
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Full name</strong>
+											<p id = "fullName" class="fullName"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Email</strong>
+											<p id="email"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6">
+											<strong>Gender</strong>
+											<p id="gender"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6">
+											<strong>Date of birth</strong>
+											<p id = "dateOfBirth"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6">
+											<strong>Phone number</strong>
+											<p id="phoneNumber"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6">
+											<strong>Security number</strong>
+											<p id = "securityNumber"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Address</strong>
+											<p id="address"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Clinical center admin edit profile content -->
+				<div class="content clinical-centre-admin-edit-profile">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Edit personal information</header>
+							</div>
+							<div class="card-body">
+								<div class="form-body">
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Email address
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input disabled type="text" id="emailEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            First Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="nameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Last Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="surnameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Gender
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <select class="form-control input-height" id="genderEdit">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Date Of Birth
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                        <input id="dateOfBirthEdit" type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Security Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Must be a number!">
+                                            <input disabled type="text" id="securityNumberEdit" data-required="1"  class="form-control input-height"/>
+                                        </div>
+									</div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Phone Number
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="phoneNumberEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Address
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="addressEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            City
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="cityEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Country
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="countryEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+									</div>
+									<div class="form-actions">
+										<div class="row">
+											<div class="offset-md-3 col-md-12 form-buttons">
+												<button id="confirmEdit" type="submit" class="btn btn-info">Save changes</button>
+												<button id="cancelEdit" type="button" class="btn btn-default">Cancel</button>
+											</div>
+										</div>
+									</div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Clinics content -->
+				<!-- add form -->
+				<div class="content clinics">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Clinics</header>
+									</div>
+									<div class="card-body">
+										<button id="addClinic" class="btn btn-info add-button">Add new clinic</button>
+										<table id="clinicTable" class="display">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Description</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Description</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end add form -->
+				</div>
+			
+				<!-- Clinic admins content -->
+				<div class="content clinic-admins">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Clinic Administrators</header>
+									</div>
+									<div class="card-body">
+										<button id="addClinicAdmin" class="btn btn-info add-button">Add new clinic administrator</button>
+										<table id="clinicAdminsTable" class="display">
+											<thead>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Phone Number</th>
+													<th>Security Number</th>
+													<th>Clinic name</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Phone Number</th>
+													<th>Security Number</th>
+													<th>Clinic name</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Center admins content -->
+				<div class="content center-admins">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Clinical Center Administrators</header>
+									</div>
+									<div class="card-body">
+										<button id="addClinicalCenterAdmin" class="btn btn-info add-button">Add new clinical center administrator</button>
+										<table id="clinicalCenterAdmins" class="display">
+											<thead>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Phone Number</th>
+													<th>Security Number</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Address</th>
+													<th>City</th>
+													<th>Country</th>
+													<th>Phone Number</th>
+													<th>Security Number</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Registration requests content -->
+				<div class="content registration-req">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Registration Requests</header>
+									</div>
+									<div class="card-body">
+										<table id="registrationReqTable" class="display">
+											<thead>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Command</th>
+												</tr>
+											</thead>
+											<tbody id="regReqBody">
+											</tbody>
+											<tfoot>
+												<tr>
+													<th>Email</th>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Gender</th>
+													<th>Date of Birth</th>
+													<th>Command</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end add form -->
+				</div>
+				
+				<!-- Decline Registration requests content -->
+				<div class="content registration-req-decline">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Decline Registration Request</header>
+									</div>
+									<div class="card-body">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Description
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<textarea id="descriptionRegReq" data-required="1"  class="form-control textarea-height">
+														</textarea>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="decline_regreq" type="button" class="btn btn-info">Decline</button>
+														<button id="cancel_decline" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end add form -->
+				</div>
+				
+				<!-- Diagnosis book content -->
+				<div class="content diagnosis-book">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Diagnosis Code Book</header>
+									</div>
+									<div class="card-body">
+										<button id="addDiagnose" class="btn btn-info add-button">Add new diagnosis</button>
+										<table id="diagnosisTable" class="display">
+											<thead>
+												<tr>
+													<th>Code</th>
+													<th>Name</th>
+													<th>Code Book</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Code</th>
+													<th>Name</th>
+													<th>Code Book</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Prescription book content -->
+				<div class="content prescription-book">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Medicine Code Book</header>
+									</div>
+									<div class="card-body">
+										<button id="addMedicine" class="btn btn-info add-button">Add new medicine</button>
+										<table id="medicineTable" class="display">
+											<thead>
+												<tr>
+													<th>Code</th>
+													<th>Name</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Code</th>
+													<th>Name</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Add new diagnose -->
+				<div class="content add-diagnose">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Add new diagnose - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="nameDiagnose" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Code Book
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<select class="form-control input-height" id="codeBookId">
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="add_diagnose" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_diagnose" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Add new medicine -->
+				<div class="content add-medicine">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Add new medicine - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="nameMedicine" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Diagnosis
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<select class="form-control input-height" multiple="multiple" id="medicineDiagnosis">
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="add_medicine" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_medicine" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Add new clinical center administrator -->
+				<div class="content addClinicalCenterAdmin">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Add new clinical center's administrator - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Email
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="emailCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Password
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="passwordCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="nameCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Surname
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="surnameCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Gender
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<select class="form-control input-height" id="genderCA">
+															<option selected="selected" value="male">Male</option>
+															<option value="female">Female</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Date of Birth
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="date" id="dateBirthCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Security number
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7 validate-input" data-validate="Security number must be a number!">
+														<input type="text" id="securityCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Clinical Center Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" disabled id="clinicalCentre" value="The Good Shepherd" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Address
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="addressCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														City
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="cityCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Country
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="countryCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Phone number
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="phoneCA" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="add_centreAdmin" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_centreAdmin" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Add new clinic administrator -->
+				<div class="content addClinicAdmin">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Add new clinic's administrator - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Email
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="emailC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Password
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="passwordC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="nameC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Surname
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="surnameC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Gender
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<select class="form-control input-height" id="genderC">
+															<option selected="selected" value="male">Male</option>
+															<option value="female">Female</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+			                                            Date Of Birth
+			                                            <span class="required"> * </span>
+			                                        </label>
+			                                        <div class="col-md-7">
+			                                        <input id="dateBirthC" type="date" class="form-control">
+			                                        </div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Security number
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7 validate-input"  data-validate="Must be a number!">
+														<input type="text" id="securityC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Clinic Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<select class="form-control input-height" id="availableClinics">
+														</select>
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Address
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="addressC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														City
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="cityC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Country
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="countryC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Phone number
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="phoneC" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="add_clinicAdmin" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_clinicAdmin" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+				<!-- Add new clinic -->
+				<div class = "content addNewClinic">
+					<div class="add">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Add new clinic - Basic information</header>
+									</div>
+									<div class="card-body" id="bar-parent">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Name
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="nameClinic" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Address
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="addressClinic" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														City
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="cityClinic" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Country
+														<span class="required"> * </span>
+													</label>
+													<div class="col-md-7">
+														<input type="text" id="countryClinic" data-required="1"  class="form-control input-height" />
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="control-label col-md-3">
+														Description
+													</label>
+													<div class="col-md-7">
+														<textarea id="descriptionClinic" data-required="1"  class="form-control textarea-height">
+														</textarea>
+													</div>
+												</div>
+											</div>
+											<div class="form-actions">
+												<div class="row">
+													<div class="offset-md-3 col-md-12 form-buttons">
+														<button id="add_clinic" type="submit" class="btn btn-info">Create</button>
+														<button id="cancel_clinic" type="button" class="btn btn-default">Cancel</button>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- end page content -->
+		</div>
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2020 &copy; The Good Shepherd Clinics - Your health care companion
+            </div>
+            <div class="scroll-to-top">
+                <img src="../../img/uparrow1.svg">
+			</div>
+		</div>
+    <!-- end footer -->
+	</div>
+	<script src="../../clinicalCentreAdmin.js"></script>
+</body>
+</html>

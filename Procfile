@@ -1,0 +1,1 @@
+web: java -jar clinical.center/target/clinical.center-0.0.1-SNAPSHOT.jar --server.port=$PORT

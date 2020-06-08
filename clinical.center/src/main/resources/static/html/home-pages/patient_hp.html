@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<title>The Good Shepherd</title>
+
+	<!-- bootstrap, jquery -->
+	<script src="../../js/library/jquery.min.js" ></script>
+	<link href="../../js/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../js/library/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- theme style -->
+	<link href="../../css/theme/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="../../css/theme/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/theme-color.css" rel="stylesheet" type="text/css" />
+
+	<!-- jedan tag -->
+	<link href="../../css/theme/material_style.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/material.indigo-pink.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- icons -->
+	<link href="../../css/theme/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Project bound files -->
+	<link href="../../css/main.css" rel="stylesheet" />
+	<script src="../../js/main_hp.js"></script>
+
+	<!-- FullCalendar -->
+	<link href='../../css/fullcalendar/core/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/daygrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/timegrid/main.css' rel='stylesheet' />
+	<link href='../../css/fullcalendar/list/main.css' rel='stylesheet' />
+
+	<script src='../../js/library/fullcalendar/core/main.js'></script>
+	<script src='../../js/library/fullcalendar/interaction/main.js'></script>
+	<script src='../../js/library/fullcalendar/daygrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/timegrid/main.js'></script>
+	<script src='../../js/library/fullcalendar/list/main.js'></script>
+
+	<!-- for tables -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="../../img/icons/logo/favicon.png"/>
+
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-cyan">
+    <div class="page-wrapper">
+        <!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="#">
+                    <img class="logo-icon" src="../../img/icons/logo/logo_plain.png">
+                    <span class="logo-default" >The Good Shepherd</span> </a>
+                </div>
+                <!-- logo end -->
+
+				<!-- start banner -->
+				<span class="banner">Ongoing COVID-19 pandemic #StayHome #StaySafe</span>
+				<!-- end banner -->
+
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="PA" src="../../img/icons/user.png" style=" border-radius: 90%; border:10px;"/>
+                                <span id="shownNameSurname" class="username username-hide-on-mobile"></span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a id="dropdownProfile" class="profile">
+										<img class="icon" src="../../img/icons/profile.png">
+										My Profile
+									</a>
+                                </li>
+                                <li>
+                                    <a id="dropdownChangePass">
+										<img src="../../img/settings.svg">
+										Change Password
+                                    </a>
+								</li>
+								<li class="divider"></li>
+                                <li>
+                                    <a id="dropdownLogout">
+										<img class="icon" src="../../img/icons/logout.png">
+										Logout	
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container ">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel profile">
+	                                <div class="pull-left image">
+	                                    <img src="../../img/icons/user.png" class="img-circle user-img-circle" alt="User Image" />
+	                                </div>
+	                                <div class="pull-left info">
+	                                    <p id="bigNameSurname" style="font-size: 16px;"></p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a id="homePage" class="nav-link nav-toggle">
+	                                <img class="icon" src="../../img/icons/home.png">
+	                                <span class="title">Home Page</span>
+	                                <span class="arrow"></span>
+	                            </a>
+	                        </li>
+                            <li class="nav-item">
+	                            <a id="patientClinics" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/clinics.png">
+									<span class="title">Clinics</span>
+									<span class="arrow"></span>
+								</a>
+								<ul id="sub" class="sub-menu">
+	                                <li class="nav-item">
+	                                    <a id="viewAllClinics" class="nav-link">
+	                                        <span class="title">View all clinics</span>
+	                                    </a>
+									</li>
+	                                <li class="nav-item">
+	                                    <a id="scheduleNewAppointment" class="nav-link">
+	                                        <span class="title">Schedule new appointment</span>
+	                                    </a>
+									</li>
+								</ul>
+							</li>
+	                        <li class="nav-item">
+	                            <a id="patientApps" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/appointment.png">
+									<span class="title">My appointments</span>
+									<span class="arrow"></span>
+								</a>
+								<ul id="sub2" class="sub-menu">
+									<li class="nav-item">
+	                                    <a id="finishedApps" class="nav-link">
+	                                        <span class="title">Appointment history</span>
+	                                    </a>
+									</li>
+	                                <li class="nav-item">
+	                                    <a id="confirmedApps" class="nav-link">
+	                                        <span class="title">Upcoming appointments</span>
+	                                    </a>
+									</li>
+	                                <li class="nav-item">
+	                                    <a id="unconfirmedApps" class="nav-link">
+	                                        <span class="title">Unconfirmed appointments</span>
+	                                    </a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+	                            <a id="patientMedicalRecord" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png">
+									<span class="title">Medical Record</span>
+									<span class="arrow"></span>
+								</a>
+							</li>
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+
+			<div class="content-container">
+				<!-- Home page content -->
+				<div class="content home-page">
+					<!-- start welcoming text -->
+					<div class="text">
+						<h1 align="center">Welcome to The Good Shepherd Clinics</h1>
+						<img class="text-logo" src="../../img/icons/logo/logo_text.png">
+						<h2 align="center">Your mind and body deserve only the best!</h2>
+					</div>
+					<!-- end welcoming text -->
+
+					<!-- start calendar -->
+					<div class="calendar" id="calendar">
+					</div>
+					<!-- end calendar -->
+				</div>
+				
+				<!-- Patient change password -->
+				<div class="content change-password">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Change password</header>
+							</div>
+							<div class="card-body">
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="password" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="control-label col-md-3">
+										Confirm Password
+										<span class="required"> * </span>
+									</label>
+									<div class="col-md-7 validate-input"  data-validate="Passwords don't match!">
+										<input type="text" id="passwordConfirm" data-required="1"  class="form-control input-height" />
+									</div>
+								</div>
+								<div class="form-actions">
+									<div class="row">
+										<div class="offset-md-3 col-md-12 form-buttons">
+											<button id="changePasswordBtn" type="submit" class="btn btn-info">Save changes</button>
+											<button id="cancelChangePasswordBtn" type="submit" class="btn btn-info">Cancel</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Patient profile content -->
+				<div class="content patient-profile">
+					<div class="col-md-5">
+						<div class="card card-topline-theme">
+							<div class="card-body no-padding height-9">
+								<div class="row">
+									<div class="profile-userpic">
+										<img src="../../img/icons/user.png" class="img-responsive" alt="">
+									</div>
+								</div>
+								<div class="profile-usertitle">
+									<div class="profile-usertitle-name fullName"></div>
+									<hr class="edit-personal">
+								</div>
+							</div>
+							<div class="edit-profile">
+								<button id="editPatientProfile" type="button" class="btn btn-info edit">Edit Profile</button>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-head card-topline-theme">
+								<header>About Me</header>
+							</div>
+							<div class="card-body no-padding height-9">
+								<div class="user-btm-box">
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Full name</strong>
+											<p id = "fullName" class="fullName"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12">
+											<strong>Email</strong>
+											<p id="email"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Gender</strong>
+											<p id="gender"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Date of birth</strong>
+											<p id = "dateOfBirth"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Phone number</strong>
+											<p id="phoneNumber"></p>
+										</div>
+										<div class="col-lg-6 col-md-12 col-sm-6"><strong>Security number</strong>
+											<p id = "securityNumber"></p>
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center m-t-10">
+										<div class="col-md-12"><strong>Address</strong>
+											<p id="address"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<div class="row">
+							<div class="card">
+								<div class="card-head card-topline-theme">
+									<header>Medical record</header>
+								</div>
+								<div class="card-body">
+									<div class="medical-record">
+										<h4 id="generalReport"></h4>
+										<h5>Height<span id = "height" class="pull-right"></span></h5>
+										<h5>Weight<span id = "weight" class="pull-right"></span></h5>
+										<h5>Blood pressure<span id = "bloodPressure" class="pull-right"></span></h5>
+										<h5>Blood type<span id = "bloodType" class="pull-right"></span></h5>
+										<h5>Allergies<span id = "allergies" class="pull-right"></span></h5>
+									</div>
+									<!-- Medical reports -->
+									<hr>
+									<!--table-->
+									<div id="medicalReport" class="row">
+										<div class="col-md-12">
+											<div class="card card-topline-theme">
+												<div class="card-head">
+													<header>Medical reports</header>
+												</div>
+												<div class="card-body">
+													<table id="medicalReports">
+														<thead>
+															<tr>
+																<th>Description</th>
+																<th>Diagnosis</th>
+																<th>Medicine</th>
+															</tr>
+														</thead>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<!-- Doctor edit profile content -->
+				<div class="content patient-edit-profile">
+					<div class="col-md-12 col-sm-12">
+						<div class="card card-box">
+							<div class="card-head">
+								<header>Edit personal information</header>
+							</div>
+							<div class="card-body">
+								<div class="form-body">
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Email address
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input disabled type="text" id="emailEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            First Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="nameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Last Name
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="surnameEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Gender
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                            <select class="form-control input-height" id="genderEdit">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Date Of Birth
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7">
+                                        <input id="dateOfBirthEdit" type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Security Number
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-7 validate-input"  data-validate="Must be a number!">
+                                            <input disabled type="text" id="securityNumberEdit" data-required="1"  class="form-control input-height"/>
+                                        </div>
+									</div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Phone Number
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="phoneNumberEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Address
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="addressEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            City
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="cityEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-md-3">
+                                            Country
+                                        </label>
+                                        <div class="col-md-7">
+                                            <input type="text" id="countryEdit" data-required="1"  class="form-control input-height" />
+                                        </div>
+									</div>
+									<div class="form-actions">
+										<div class="row">
+											<div class="offset-md-3 col-md-12 form-buttons">
+												<button id="confirmEdit" type="submit" class="btn btn-info">Save changes</button>
+												<button id="cancelEdit" type="button" class="btn btn-default">Cancel</button>
+											</div>
+										</div>
+									</div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Patient clinics content -->
+
+				<!-- Patient view clinics -->
+				<div class="content patient-viewAllClinics">
+					<!-- All clinics table -->
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>The Good Shepherd's clinics</header>
+									</div>
+									<div class="card-body">
+										<div class="form-group row">
+											<label class="control-label col-md-1">
+												Name:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="allClinicsName" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Address:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="allClinicsAddress" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Minimum rating:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="allClinicsMinRating" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<div class="col-md-2">
+												<button id="filterAllClinicsByAtributes" type="submit" class="btn btn-info doctor-filter-btn">Filter</button>
+											</div>
+										</div>
+										<table id="allClinicsTable" class="display">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Rating</th>
+													<th>Visit clinic</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Rating</th>
+													<th>Visit clinic</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- View clinic -->
+				<div class="content view-clinic">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="card card-topline-theme">
+								<div class="card-body no-padding height-9">
+									<div class="row justify-content-md-center">
+										<div class="profile-userpic">
+											<img src="../../img/icons/index/clinic_admin.png" class="img-responsive" alt="">
+										</div>
+									</div>
+									<div class="profile-usertitle">
+										<div class="profile-usertitle-name clinicName"></div>
+									</div>
+									<hr>
+									<button id="viewPredefined" class="btn btn-info predefined-app-btn">View predefined appointments</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="card">
+								<div class="card-head card-topline-theme">
+									<header>About</header>
+									<button id="clinicBack" type="button" class="btn back-btn">Back</button>
+								</div>
+								<div class="card-body">
+									<div class="medical-record">
+										<h5>Name<span class="pull-right clinicName"></span></h5>
+										<h5>Rating<span id="clinicRating" class="pull-right"></span></h5>
+										<h5>Address<span id="clinicAddress" class="pull-right"></span></h5>
+										<h5>City<span id="clinicCity" class="pull-right"></span></h5>
+										<h5>Country<span id="clinicCountry" class="pull-right"></span></h5>
+										<h5>Description<span id="clinicDescription" class="pull-right"></span></h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Clinic's predefined appointments -->
+				<div class="content view-predefined">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header id="clinicPredefined"></header>
+										<button id="predefinedBack" type="button" class="btn back-btn">Back</button>
+									</div>
+									<div class="card-body">
+										<div class="form-group row">
+											<label class="control-label col-md-1">
+												Date:
+											</label>
+											<div class="col-md-2">
+												<input id="filterPredefinedDate" type="date" class="form-control date-filter">
+											</div>
+											<label class="control-label col-md-2">
+												Appointment type:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="filterPredefinedType" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Doctor:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="filterPredefinedDoctor" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<div class="col-md-2">
+												<button id="filterPredefined" type="submit" class="btn btn-info doctor-filter-btn">Filter</button>
+											</div>
+										</div>
+										<table id="predefinedApps" class="display">
+											<thead>
+												<tr>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Type</th>
+													<th>Doctor</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Schedule</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Type</th>
+													<th>Doctor</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Schedule</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Patient create new appointment -->
+				<div class="content patient-createNewApp">
+					<!-- Schedule appointment filter -->
+					<div class="schedule-appointment">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Schedule an appointment</header>
+									</div>
+									<div class="card-body">
+										<form class="form-horizontal">
+											<div class="form-body">
+												<div class="form-group row">
+													<label class="control-label col-md-2">
+														Date:
+													</label>
+													<div class="col-md-3">
+														<input id="filterAppDate" type="date" class="form-control date-filter">
+														<!--<div class="input-group date form_date " data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+															<input id="filterAppDate" class="form-control input-height" size="16" placeholder="date of Birth" type="text" value="23/07/1988">
+															<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+														</div>
+														<input type="hidden" id="dtp_input2" value="" />-->
+													</div>
+													<label class="control-label col-md-3">
+														Appointment type:
+													</label>
+													<div class="col-md-3">
+														<select class="form-control input-height" id="filterAppType">
+														</select>
+													</div>
+												</div>
+												<div class="form-actions">
+													<div class="row">
+														<div class="offset-md-3 col-md-12 form-buttons">
+															<button id="filterClinics" type="submit" class="btn btn-info filter-btn">Filter clinics</button>
+															<button id="clearClinicsFilter" type="submit" class="btn btn-info filter-btn">Clear filter</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Clinics table -->
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Clinics</header>
+									</div>
+									<div class="card-body">
+										<div class="form-group row">
+											<label class="control-label col-md-1">
+												Name:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="clinicName" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Address:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="clinicAddress" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<div class="col-md-2">
+												<button id="filterClinicsByAtributes" type="submit" class="btn btn-info doctor-filter-btn">Filter</button>
+											</div>
+										</div>
+										<table id="clinicsTable" class="display">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Rating</th>
+													<th>Price</th>
+													<th>Appointment type</th>
+													<th>Duration</th>
+													<th>View doctors</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Address</th>
+													<th>Rating</th>
+													<th>Price</th>
+													<th>Appointment type</th>
+													<th>Duration</th>
+													<th>View doctors</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Doctors table -->
+					<div id="doctorTableDiv" class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header id="doctorsClinic"></header>
+									</div>
+									<div class="card-body">
+										<div class="form-group row">
+											<label class="control-label col-md-1">
+												Name:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="doctorName" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Surname:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="doctorSurname" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<label class="control-label col-md-1">
+												Rating:
+											</label>
+											<div class="col-md-2">
+												<input type="text" id="doctorRating" data-required="1"  class="form-control doctor-input-height" />
+											</div>
+											<div class="col-md-2">
+												<button id="filterDoctorsByAtributes" type="submit" class="btn btn-info doctor-filter-btn">Filter</button>
+											</div>
+										</div>
+										<table id="doctorsClinicTable" class="display">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Rating</th>
+													<th>Available times</th>
+													<th>Schedule</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Name</th>
+													<th>Surname</th>
+													<th>Rating</th>
+													<th>Available times</th>
+													<th>Schedule</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Confirm appointment content -->
+				<div class="content patient-confirm-app">
+					<div class="schedule-appointment">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>Confirm appointment</header>
+									</div>
+									<div class="card-body confirm">
+										<div class="confirm-app">
+											<h4>Date<span id="date" class="pull-right"></span></h4>
+											<h4>Time<span id="time" class="pull-right"></span></h4>
+											<h4>Duration<span id="duration" class="pull-right"></span></h4>
+											<h4>Appointment type<span id="appType" class="pull-right"></span></h4>
+											<h4>Doctor<span id="doctor" class="pull-right"></span></h4>
+											<h4>Clinic<span id="clinic" class="pull-right"></span></h4>
+										</div>
+										<hr>
+										<div class="form-actions">
+											<div class="row">
+												<div class="offset-md-3 col-md-9 form-buttons">
+													<button id="confirmApp" type="button" class="btn btn-info">Confirm</button>
+													<button id="cancelApp" type="button" class="btn btn-default">Cancel</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Patient appointments content -->
+				<!-- Patients finished appointments -->
+				<div class="content patient-finished-apps">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>My appointments history</header>
+									</div>
+									<div class="card-body">
+										<table id="finishedAppsTable" class="display">
+											<thead>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Patients confirmed appointments -->
+				<div class="content patient-confirmed-apps">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>My upcoming appointments</header>
+									</div>
+									<div class="card-body">
+										<table id="confirmedAppsTable" class="display">
+											<thead>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Patients uncofirmed appointments - pending acceptance -->
+				<div class="content patient-unconfirmed-apps">
+					<div class="table-view">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<div class="card card-box">
+									<div class="card-head">
+										<header>My unconfirmed appointments</header>
+									</div>
+									<div class="card-body">
+										<table id="unconfirmedAppsTable" class="display">
+											<thead>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+													<th>Command</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Appointment type</th>
+													<th>Date</th>
+													<th>Start time</th>
+													<th>End time</th>
+													<th>Ordination</th>
+													<th>Price</th>
+													<th>Discount</th>
+													<th>Doctor</th>
+													<th>Command</th>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Patient medical record content -->
+				<div class="content patient-medicalRecord">
+					patient medical record
+				</div>
+				<!-- end page content -->
+			</div>
+		</div>
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2020 &copy; The Good Shepherd Clinics - Your health care companion
+            </div>
+            <div class="scroll-to-top">
+                <img src="../../img/uparrow1.svg">
+			</div>
+		</div>
+    <!-- end footer -->
+	</div>
+	
+	<!-- ksenija dodala -->
+	<script src="../../patient.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+sudo: required
+language: java
+jdk: oraclejdk8
+
+services:
+  - postgresql
+
+addons:
+  sonarcloud:
+  organization: tim12
+  token: 04ef90a2a5c450339d1ebaaedb5fbc1fbbc94de6
+
+script:
+  - cd clinical.center
+  - mvn clean install
+  - mvn sonar:sonar -Dsonar.projectKey=fmilica_MRSISA2020_T12 -Dsonar.organization=tim12 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=04ef90a2a5c450339d1ebaaedb5fbc1fbbc94de6
+
+dist: trusty
+
+deploy:
+  provider: heroku
+  api_key: edb82564-1b9f-462f-9c59-af1a2226b2ac
+  app: tim12-clinical-centre

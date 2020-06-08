@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0">
+  <persistence-unit name="ClinicalCentre" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <!-- <class>clinical.center.src.main.java.mrs.isa.team.12Appointment</class>
+    <class>clinical.center.AppointmentRequest</class>
+    <class>clinical.center.AppointmentType</class>
+    <class>clinical.center.Clinic</class>
+    <class>clinical.center.ClinicAdmin</class>
+    <class>clinical.center.ClinicalCentreAdmin</class>
+    <class>clinical.center.DiagnosePerscription</class>
+    <class>clinical.center.Diagnosis</class>
+    <class>clinical.center.Doctor</class>
+    <class>clinical.center.Leave</class>
+    <class>clinical.center.LeaveRequest</class>
+    <class>clinical.center.MedicalPersonnel</class>
+    <class>clinical.center.MedicalRecord</class>
+    <class>clinical.center.MedicalReport</class>
+    <class>clinical.center.Nurse</class>
+    <class>clinical.center.Ordination</class>
+    <class>clinical.center.Patient</class>
+    <class>clinical.center.Prescription</class>
+    <class>clinical.center.Rating</class>
+    <class>clinical.center.RegisteredUser</class>
+    <class>clinical.center.RegistrationRequest</class>
+    <class>clinical.center.Report</class> -->
+     <properties>
+         <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+         <property name="javax.persistence.jdbc.user" value="postgres"/>
+         <property name="javax.persistence.jdbc.password" value="admin"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/jpa"/>
+         <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+         <property name="hibernate.max_fetch_depth" value="3"/>
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
+         <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+         <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+         <property name="hibernate.archive.autodetection" value="class, hbm"/>
+      </properties>
+     <!-- <properties>
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost/cefn" />
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.connection.username" value="cefn" />
+			<property name="hibernate.connection.password" value="cefn" />
+			<property name="Log" value="DefaultLevel=WARN, Tool=INFO" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties> -->
+  </persistence-unit>
+</persistence>

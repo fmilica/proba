@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	<title>The Good Shepherd</title>
+
+	<!-- bootstrap, jquery -->
+    <script src="../../js/library/jquery.min.js" ></script>
+    <script src="../../js/library/jquery.slimscroll.js" ></script>
+	<link href="../../js/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="../../js/library/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- theme style -->
+	<link href="../../css/theme/theme_style.css" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="../../css/theme/responsive.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/theme-color.css" rel="stylesheet" type="text/css" />
+
+    <!-- radio lik javascript padajuci meni top -->
+    <script src="../../js/library/app.js" ></script>
+    <script src="../../js/library/layout.js" ></script>
+    <!-- jedan tag da fak jebse -->
+	<link href="../../css/theme/material_style.css" rel="stylesheet" type="text/css" />
+	<link href="../../css/theme/material.indigo-pink.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- icons -->
+	<link href="../../css/theme/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Project bound files -->
+	<link href="../../css/main.css" rel="stylesheet" />
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="../../img/icons/logo/favicon.png"/>
+
+	<!-- for tables -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-cyan">
+    <div class="page-wrapper">
+        <!-- start header -->
+		<div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="#">
+                    <img class="logo-icon" src="../../img/icons/logo/logo_plain.png"></img>
+                    <span class="logo-default" >The Good Shepherd</span> </a>
+                </div>
+                <!-- logo end -->
+
+				<!-- start banner -->
+				<span class="banner">Ongoing COVID-19 pandemic #StayHome #StaySafe</span>
+				<!-- end banner -->
+
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="PA" src="../../img/dp.jpg" style=" border-radius: 90%; border:10px;"/>
+                                <span class="username username-hide-on-mobile">Clinic Admin A</span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="user_profile.html">
+										<img class="icon" src="../../img/icons/profile.png"></img>
+										My Profile
+									</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+										<img src="../../img/settings.svg"></img>
+										Change Password
+                                    </a>
+								</li>
+								<li class="divider"></li>
+                                <li>
+                                    <a href="#">
+										<img class="icon" src="../../img/icons/logout.png"></img>
+										Logout	
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container" style="height: 193vh;">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel">
+	                                <div class="pull-left image">
+	                                    <img src="../../img/dp.jpg" class="img-circle user-img-circle" alt="User Image" />
+	                                </div>
+	                                <div class="pull-left info">
+	                                    <p style="font-size: 16px;">Clinic Admin A</p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a href="#" class="nav-link nav-toggle">
+	                                <img class="icon" src="../../img/icons/home.png"></img>
+	                                <span class="title">Home Page</span>
+	                                <span class="arrow"></span>
+	                            </a>
+	                        </li>
+                            <li class="nav-item">
+	                            <a href="#" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/clinics.png"></img>
+									<span class="title">Clinic Profile</span>
+									<span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+	                                <li class="nav-item">
+	                                    <a href="#" class="nav-link">
+	                                        <span class="title">Clinic Information</span>
+	                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a href="#" class="nav-link ">
+	                                        <span class="title">Appointments</span>
+	                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a href="#" class="nav-link ">
+	                                        <span class="title">Doctors</span>
+	                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a href="#" class="nav-link ">
+	                                        <span class="title">Operating rooms</span>
+	                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a href="#" class="nav-link ">
+	                                        <span class="title">Appointment types</span>
+	                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+	                                    <a href="#" class="nav-link ">
+	                                        <span class="title">Pricelist</span>
+	                                    </a>
+	                                </li>
+	                            </ul>
+							</li>
+	                        <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/appointment.png"></img>
+									<span class="title">Create an Appointment</span>
+									<span class="arrow"></span>
+	                            </a>
+							</li>
+							<li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png"></img>
+									<span class="title">Reports</span>
+									<span class="arrow"></span>
+								</a>
+                            </li>
+                            <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png"></img>
+									<span class="title">Examination request</span>
+									<span class="arrow"></span>
+								</a>
+                            </li>
+                            <li class="nav-item  ">
+	                            <a href="#" class="nav-link nav-toggle">
+									<img class="icon" src="../../img/icons/medical_record.png"></img>
+									<span class="title">Vacation/Paid Leave</span>
+									<span class="arrow"></span>
+								</a>
+							</li>
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+			<!-- end sidebar menu -->
+
+			<!-- start page content -->
+
+			<div class="content-container">
+                <div class="table-view">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="card card-box">
+                                <div class="card-head">
+                                    <header>Doctors</header>
+                                </div>
+                                <div class="card-body">
+									<button id="addDoctor" class="btn btn-info">Add new doctor</button>
+									<table id="doctorTable" class="display proba">
+										<thead>
+											<tr>
+												<!--<th>Id</th>-->
+												<th>Email</th>
+												<!--<th>Password</th>-->
+												<th>Name</th>
+												<th>Surname</th>
+												<th>Gender</th>
+												<th>Date of Birth</th>
+												<th>Address</th>
+												<th>City</th>
+												<th>Country</th>
+												<th>Phone Number</th>
+												<th>Security Number</th>
+												<th>Specialization</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<!--<th>Id</th>-->
+												<th>Email</th>
+												<!--<th>Password</th>-->
+												<th>Name</th>
+												<th>Surname</th>
+												<th>Gender</th>
+												<th>Date of Birth</th>
+												<th>Address</th>
+												<th>City</th>
+												<th>Country</th>
+												<th>Phone Number</th>
+												<th>Security Number</th>
+												<th>Specialization</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- end page content -->
+		</div>
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2020 &copy; The Good Shepherd Clinics - Your health care companion
+            </div>
+            <div class="scroll-to-top">
+                <img src="../../img/uparrow1.svg"></img>
+			</div>
+		</div>
+    <!-- end footer -->
+	</div>
+	<script src="../../doctor.js"></script>
+</body>
+</html>

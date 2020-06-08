@@ -1,0 +1,200 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('fonts/poppins/Poppins-Regular.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url('fonts/poppins/Poppins-Medium.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url('fonts/poppins/Poppins-Bold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-SemiBold;
+    src: url('fonts/poppins/Poppins-SemiBold.ttf'); 
+  }
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  
+  * {
+      margin: 0px; 
+      padding: 0px; 
+      box-sizing: border-box;
+  }
+  
+  body, html {
+      height: 100%;
+      font-family: Poppins-Regular, sans-serif;
+  }
+  
+  /*---------------------------------------------*/
+  button {
+      outline: none !important;
+      border: none;
+      background: transparent;
+  }
+  
+  button:hover {
+      cursor: pointer;
+  }
+  
+  iframe {
+      border: none !important;
+  }
+
+  /*------------------------------------------------------------------
+  [ Form ]*/
+
+  .login100-form-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .login100-form-avatar {
+    display: block;
+    width: 240px;
+    height: 215px;
+    padding-top: 40px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .login100-form-avatar img {
+    width: 100%;
+  }
+  
+  /*------------------------------------------------------------------
+  [ Button ]*/
+
+  .login100-form-btn {
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #1ec99c;
+    border-radius: 25px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .login100-form-btn:hover  {
+    background-color: #21ad88;
+  }
+  
+  /*------------------------------------------------------------------
+  [ Layout ]*/
+
+  .container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "left header header header header header right"
+    "left center-admin clinic-admin patient doctor nurse right";
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr;
+  }
+  .left {
+    grid-area: left;
+  }
+  .header {
+    grid-area: header;
+    padding-top: 15px;
+    margin: 10px 3px 10px 3px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+  .right {
+    grid-area: right;
+  }
+  .center-admin {
+    grid-area: center-admin;
+    margin: 0 3px 20px 3px;
+    padding: 0 5px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+  .clinic-admin {
+    grid-area: clinic-admin;
+    margin: 0 3px 20px 3px;
+    padding: 0 5px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+  .patient {
+    grid-area: patient;
+    margin: 0 3px 20px 3px;
+    padding: 0 5px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+  .doctor {
+    grid-area: doctor;
+    padding: 0 5px;
+    margin: 0 3px 20px 3px;
+    padding: 0 5px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+  .nurse {
+    grid-area: nurse;
+    margin: 0 3px 20px 3px;
+    padding: 0 5px;
+    background-color: rgb(40, 181, 244, 0.2);
+    border-radius: 20px;
+  }
+
+  /*------------------------------------------------------------------
+  [ Images ]*/
+  
+  .user-type-avatar {
+    display: block;
+    width: 100px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .user-type-avatar img {
+    width: 100%;
+  }
+  .center-admin-img {
+    padding-top: 45px;
+  }
+  .clinic-admin-img {
+    padding-top: 50px;
+  }
+  .patient-img {
+    padding-top: 55px;
+  }
+  .doctor-img {
+    padding-top: 8px;
+  }
+  .nurse-img {
+    padding-top: 70px;
+  }
