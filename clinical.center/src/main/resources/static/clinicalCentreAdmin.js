@@ -75,6 +75,7 @@ $(document).ready(function() {
 				$('.home-page').show()
 				$("#password").val("")
 				$("#passwordConfirm").val("")
+				logger = true;
 			},
 			error : function(response) {
 				alert(response.responseJSON.message)

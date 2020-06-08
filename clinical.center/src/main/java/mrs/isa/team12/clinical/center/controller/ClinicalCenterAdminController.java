@@ -109,7 +109,7 @@ public class ClinicalCenterAdminController {
 		
 		session.setAttribute("currentUser", clinicalCentreAdmin);
 		
-		return new ResponseEntity<>(new RegisteredUserDto(clinicalCentreAdmin), HttpStatus.OK);
+		return new ResponseEntity<>(new RegisteredUserDto(clinicalCentreAdmin, clinicalCentreAdmin.getLogged()), HttpStatus.OK);
 	}
 	
 	/*

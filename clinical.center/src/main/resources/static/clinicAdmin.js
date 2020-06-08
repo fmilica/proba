@@ -8,12 +8,9 @@ var upcomingAppointmentTable;
 var createAppTable;
 var operReqTable;
 var operRoomTable;
-<<<<<<< HEAD
 var doctorRating;
-=======
 var vacationTable;
 var declineId;
->>>>>>> e099df21883d7a021914e1aad2f79a8bd6da752f
 
 var changedExamTime = false;
 
@@ -106,6 +103,7 @@ $(document).ready(function() {
 				$('.home-page').show()
 				$("#password").val("")
 				$("#passwordConfirm").val("")
+				logger = true
 			},
 			error : function(response) {
 				alert(response.responseJSON.message)
@@ -1547,10 +1545,12 @@ function viewClinicReport(){
 				columns: [
 					{ data: 'fullName'},
 					{ data: 'rating'}]
-			})
+				})
+			} else{
+				doctorRating.clear().rows.add(output.doctorRatings).draw();
 			}
-			 var ctx = $('nazivCharta');
-			 myLineChart = new Chart(ctx, {
+			var ctx = $('nazivCharta');
+			myLineChart = new Chart(ctx, {
 			    type: 'line',
 			    options: {
 			    	tooltips: {
@@ -1572,10 +1572,7 @@ function viewClinicReport(){
 					    }]
 				    }
 			    }   
-			 });
-		}else{
-			doctorRating.clear().rows.add(output.doctorRatings).draw();
-		}
+			 })
 		},
 		error : function(response) {
 			alert(response.responseJSON.message)
@@ -1866,8 +1863,6 @@ function logInClinicAdmin(email, password){
 		}
 	})
 }
-<<<<<<< HEAD
-=======
 
 function acceptReq(id){
 	
@@ -1898,4 +1893,3 @@ function declineReq(id){
 	$('.content').hide()
 	$('.leave-req-decline').show()
 }
->>>>>>> e099df21883d7a021914e1aad2f79a8bd6da752f

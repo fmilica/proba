@@ -93,7 +93,7 @@ public class DoctorController {
 		
 		session.setAttribute("currentUser", doctor);
 		
-		return new ResponseEntity<>(new RegisteredUserDto(doctor), HttpStatus.OK);
+		return new ResponseEntity<>(new RegisteredUserDto(doctor, doctor.getLogged()), HttpStatus.OK);
 	}
 	
 	/*

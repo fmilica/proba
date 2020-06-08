@@ -63,12 +63,15 @@ public class RegisteredUser {
 	@Column(name="security_number", unique=false, nullable=false)
 	private String securityNumber;
 	
+	//za potrebe izmene lozinke prilikom prvog logina
+	@Column(name = "logged")
+	private Boolean logged;
 	
 	public RegisteredUser() {}
 	
 	public RegisteredUser(String email, String password, String name, String surname, String gender, 
 			String dateOfBirth, String address, String city, String country, 
-			String phoneNumber, String securityNumber) {
+			String phoneNumber, String securityNumber, Boolean logged) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -82,11 +85,12 @@ public class RegisteredUser {
 		this.phoneNumber = phoneNumber;
 		this.securityNumber = securityNumber;
 		this.active = true;
+		this.logged = logged;
 	}
 	
 	public RegisteredUser(Long id, String email, String password, String name, String surname, String gender, 
 			String dateOfBirth, String address, String city, String country, 
-			String phoneNumber, String securityNumber) {
+			String phoneNumber, String securityNumber, Boolean logged) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -101,6 +105,7 @@ public class RegisteredUser {
 		this.phoneNumber = phoneNumber;
 		this.securityNumber = securityNumber;
 		this.active = true;
+		this.logged = logged;
 	}
 
 	public String getEmail() {
@@ -184,6 +189,14 @@ public class RegisteredUser {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	public Boolean getLogged() {
+		return logged;
+	}
+
+	public void setLogged(Boolean logged) {
+		this.logged = logged;
 	}
 
 	@Override

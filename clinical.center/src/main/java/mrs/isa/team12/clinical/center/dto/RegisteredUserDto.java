@@ -6,10 +6,17 @@ public class RegisteredUserDto {
 
 	private String name;
 	private String surname;
+	private Boolean logged;
 	
 	public RegisteredUserDto(RegisteredUser user) {
 		this.name = user.getName();
 		this.surname = user.getSurname();
+	}
+	
+	public RegisteredUserDto(RegisteredUser user, Boolean logged) {
+		this.name = user.getName();
+		this.surname = user.getSurname();
+		this.logged = logged;
 	}
 	
 	public String getName() {
@@ -24,4 +31,13 @@ public class RegisteredUserDto {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+
+	public Boolean getLogged() {
+		return logged;
+	}
+
+	public void setLogged(Boolean logged) {
+		this.logged = logged;
+	}
+	
 }

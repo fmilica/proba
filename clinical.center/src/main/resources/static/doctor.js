@@ -28,7 +28,7 @@ $(document).ready( function () {
 
 	//select2 radi zbog ovoga
 	$.fn.modal.Constructor.prototype.enforceFocus = function() {};
-
+	
 	/*View personal information*/
 	$('.d-profile').on('click', function(e){
 		e.preventDefault()
@@ -61,6 +61,7 @@ $(document).ready( function () {
 	/*Change password*/
 	$('#changePasswordBtn').click(function(e) {
 		e.preventDefault()
+		$('#cancelChangePasswordBtn').show()
 		changePassword()
 	})
 
@@ -112,6 +113,9 @@ $(document).ready( function () {
 
 	/*View all patients*/
 	$('#doctorPatients').click(function(event) {
+		if(!logger){
+    		return;
+    	}
 		event.preventDefault()
 		viewAllPatients()
 		
@@ -901,6 +905,7 @@ function changePassword() {
 			$('.home-page').show()
 			$("#password").val("")
 			$("#passwordConfirm").val("")
+			logger = true
 		},
 		error : function(response) {
 			alert(response.responseJSON.message)

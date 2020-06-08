@@ -25,28 +25,28 @@ insert into ordination(id, ordination_type, name, ordination_number, clinic_id, 
 values('51', '1', 'The Good Exam', '2', '17', '0', 'true');
 
 /*Admin klinickog centra*/
-insert into clinical_centre_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, clinical_centre_id, version, is_active) 
-values ('7', 'thegoodshepherdadm@gmail.com', 'admin1tgs', 'Ksenija', 'Prcic', 'female', '1990-06-15', 'Adresa', 'City', 'Country', '55', '22', '1', '0', 'true');
+insert into clinical_centre_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, clinical_centre_id, version, is_active, logged) 
+values ('7', 'thegoodshepherdadm@gmail.com', 'admin1tgs', 'Ksenija', 'Prcic', 'female', '1990-06-15', 'Adresa', 'City', 'Country', '55', '22', '1', '0', 'true', 'false');
 
 /*Admin klinike*/
-insert into clinic_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number,clinic_id, version, is_active) 
-values ('8', 'felisimadolanovski@gmail.com', 'felidola1', 'Felisima', 'Dolanovski', 'female', '1978-05-20', 'Adresa1', 'Grad1', 'Ukrajina', '55', '11', '17', '0', 'true');
+insert into clinic_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number,clinic_id, version, is_active, logged) 
+values ('8', 'felisimadolanovski@gmail.com', 'felidola1', 'Felisima', 'Dolanovski', 'female', '1978-05-20', 'Adresa1', 'Grad1', 'Ukrajina', '55', '11', '17', '0', 'true', 'true');
 
-insert into clinic_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number,clinic_id, version, is_active) 
-values ('22', 'perapera2359@gmail.com', 'perapera2', 'Petar', 'Isailovic', 'male', '1989-07-20', 'Kralja Petra I 42', 'Nis', 'Srbija', '55', '98', '6', '0', 'true');
+insert into clinic_admin (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number,clinic_id, version, is_active, logged) 
+values ('22', 'perapera2359@gmail.com', 'perapera2', 'Petar', 'Isailovic', 'male', '1989-07-20', 'Kralja Petra I 42', 'Nis', 'Srbija', '55', '98', '6', '0', 'true', 'false');
 
 /*Doktori nase prve klinike*/
-insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active) 
-values ('9', 'jovadoktor1@gmail.com', 'jovajova1', 'Jova', 'Jovic', 'male', '1965-03-01', 'Isidorina 3', 'Novi Sad', 'Srbija', '55', '33', '4.7', '6', '4', '6', '14', '0', 'true');
-insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active) 
-values ('10', 'zovadoktorka@gmail.com', 'zovazova1', 'Zova', 'Zovic', 'female', '1980-07-09', 'Knez Mihailova 2', 'Beograd', 'Srbija', '55', '44', '4.3', '6', '5', '8', '16', '0', 'true');
-insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active) 
-values ('52', 'kova', 'kova', 'Kova', 'Kovic', 'female', '1993-06-01', 'Milosa Obilica 56', 'Negotin', 'Srbija', '55', '99', '3.7', '6', '5', '13', '21', '0', 'true');
+insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active, logged) 
+values ('9', 'jovadoktor1@gmail.com', 'jovajova1', 'Jova', 'Jovic', 'male', '1965-03-01', 'Isidorina 3', 'Novi Sad', 'Srbija', '55', '33', '4.7', '6', '4', '6', '14', '0', 'true', 'true');
+insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active, logged) 
+values ('10', 'zovadoktorka@gmail.com', 'zovazova1', 'Zova', 'Zovic', 'female', '1980-07-09', 'Knez Mihailova 2', 'Beograd', 'Srbija', '55', '44', '4.3', '6', '5', '8', '16', '0', 'true', 'true');
+insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active, logged) 
+values ('52', 'kova', 'kova', 'Kova', 'Kovic', 'female', '1993-06-01', 'Milosa Obilica 56', 'Negotin', 'Srbija', '55', '99', '3.7', '6', '5', '13', '21', '0', 'true', 'true');
 /*Doktori nase druge klinike*/
-insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active) 
-values ('11', 'govadoktor@gmail.com', 'govagova1', 'Gova', 'Govic', 'male', '1972-10-19', 'Hajdova 5', 'Zrenjanin', 'Srbija', '55', '55', '4.8', '17', '5', '12', '20', '0', 'true');
-insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active) 
-values ('48', 'mova', 'mova', 'Mova', 'Movic', 'female', '1978-7-18', 'Ivanjicka 17', 'Ivanjica', 'Srbija', '55', '88', '3.9', '17', '3', '08', '14', '0', 'true');
+insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active, logged) 
+values ('11', 'govadoktor@gmail.com', 'govagova1', 'Gova', 'Govic', 'male', '1972-10-19', 'Hajdova 5', 'Zrenjanin', 'Srbija', '55', '55', '4.8', '17', '5', '12', '20', '0', 'true', 'true');
+insert into doctor (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, rating, clinic_id, specialization, start_work, end_work, version, is_active, logged) 
+values ('48', 'mova', 'mova', 'Mova', 'Movic', 'female', '1978-7-18', 'Ivanjicka 17', 'Ivanjica', 'Srbija', '55', '88', '3.9', '17', '3', '08', '14', '0', 'true', 'false');
 
 /*Tri tipa pregleda*/
 insert into appointment_type (id, name, duration, price, /*doctor_id,*/ clinic_id, version, is_active) values ('12', 'Gynecological', '1', '30', /*'9',*/ '6', '0', 'true');
@@ -66,8 +66,8 @@ insert into appointment_type_doctor (appointment_type_id, doctor_id) values ('19
 insert into appointment_type_doctor (appointment_type_id, doctor_id) values ('49', '48');
 
 /* Medicinske sestre */
-insert into nurse (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, version, is_active, clinic_id) 
-values ('15', 'zikambrat@gmail.com', 'zikazika1', 'Zika', 'Zikic', 'male', '1990-06-15', 'Adresa', 'City', 'Country', '44', '66', '0', 'true', '6');
+insert into nurse (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, version, is_active, clinic_id, logged) 
+values ('15', 'zikambrat@gmail.com', 'zikazika1', 'Zika', 'Zikic', 'male', '1990-06-15', 'Adresa', 'City', 'Country', '44', '66', '0', 'true', '6', 'false');
 
 /* Pacijenti i njihovi zdravstveni kartoni*/
 insert into patient (id, email, password, name, surname, gender, date_of_birth, address, city, country, phone_number, security_number, clinical_centre_id, version, is_active) 

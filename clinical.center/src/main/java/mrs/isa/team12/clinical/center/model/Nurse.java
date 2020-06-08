@@ -20,9 +20,9 @@ public class Nurse extends MedicalPersonnel{
 
 	public Nurse(String email, String password, String name, String suername, String gender,
 			String dateOfBirth, String address, String city, String country, 
-			String phoneNumber, String securityNumber, Set<Leave> leaveList, Set<Patient> patients, Clinic clinic) {
+			String phoneNumber, String securityNumber, Set<Leave> leaveList, Set<Patient> patients, Clinic clinic, Boolean logged) {
 		super(email, password, name, suername, gender, dateOfBirth, address, city, country, phoneNumber, securityNumber, leaveList,
-				patients, clinic);
+				patients, clinic, logged);
 	}
 
 	public Set<MedicalReport> getMedicalReports() {

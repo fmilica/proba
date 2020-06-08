@@ -62,6 +62,7 @@ public class ClinicalCentreAdminServiceImpl implements ClinicalCenterAdminServic
 		logger.info("> update id:{}", id);
 		ClinicalCentreAdmin clinicalCentreAdminToUpdate = clinicCentreAdminRep.findOneById(id);
 		clinicalCentreAdminToUpdate.setPassword(newPassword);
+		clinicalCentreAdminToUpdate.setLogged(true);
 		clinicCentreAdminRep.save(clinicalCentreAdminToUpdate);
 		logger.info("< update id:{}", id);
 		return clinicalCentreAdminToUpdate;

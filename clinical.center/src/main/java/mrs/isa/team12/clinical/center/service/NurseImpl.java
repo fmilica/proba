@@ -53,6 +53,7 @@ public class NurseImpl implements NurseService {
 		Nurse nurseToUpdate = nurseRep.findOneById(id);
 		
 		nurseToUpdate.setPassword(newPassword);
+		nurseToUpdate.setLogged(true);
 		Nurse n = nurseRep.save(nurseToUpdate);
 		
 		logger.info("< update id:{}", id);

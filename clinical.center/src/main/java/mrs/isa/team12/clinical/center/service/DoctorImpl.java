@@ -73,6 +73,7 @@ public class DoctorImpl implements DoctorService {
 		logger.info("> update id{}", doctorId);
 		Doctor doctorToUpdate = doctorRep.findOneById(doctorId);
 		doctorToUpdate.setPassword(newPassword);
+		doctorToUpdate.setLogged(true);
 		Doctor updated = doctorRep.save(doctorToUpdate);
 		logger.info("< update id{}", doctorId);
 		return updated; 

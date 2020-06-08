@@ -58,7 +58,7 @@ public class NurseController {
 		
 		session.setAttribute("currentUser", nurse);
 		
-		return new ResponseEntity<>(new RegisteredUserDto(nurse), HttpStatus.OK);
+		return new ResponseEntity<>(new RegisteredUserDto(nurse, nurse.getLogged()), HttpStatus.OK);
 	}
 	
 	/*

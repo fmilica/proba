@@ -1,5 +1,6 @@
 package mrs.isa.team12.clinical.center.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,8 +19,8 @@ public class ClinicalCentreAdmin extends RegisteredUser{
 
 	public ClinicalCentreAdmin(String email, String password, String name, String surname, String gender, 
 			String dateOfBirth, String address, String city,String country, 
-			String phoneNumber, String securityNumber, ClinicalCentre clinicalCentre) {
-		super(email, password, name, surname, gender, dateOfBirth, address, city, country, phoneNumber, securityNumber);
+			String phoneNumber, String securityNumber, ClinicalCentre clinicalCentre, Boolean logged) {
+		super(email, password, name, surname, gender, dateOfBirth, address, city, country, phoneNumber, securityNumber, logged);
 		this.clinicalCentre = clinicalCentre;
 	}
 

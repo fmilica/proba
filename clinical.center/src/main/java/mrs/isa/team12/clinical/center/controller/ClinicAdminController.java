@@ -250,7 +250,7 @@ public class ClinicAdminController {
 		session.setAttribute("currentUser", clinicAdmin);
 		
 		//treba da vraca clinicAdmin
-		return new ResponseEntity<>(new RegisteredUserDto(clinicAdmin), HttpStatus.OK);
+		return new ResponseEntity<>(new RegisteredUserDto(clinicAdmin, clinicAdmin.getLogged()), HttpStatus.OK);
 	}
 	
 	/*

@@ -1,5 +1,6 @@
 var calendar;
 var loggedUser;
+var logger = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
@@ -29,6 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready( function () {
 	
+	//proverava da li je prvi put ulogovan
+	isLogged()
+	
+	//proverava da li je odjavljen
+	isUserLogged()
+	
 	var nameSurname = sessionStorage.getItem('nameSurname')
 	$("#shownNameSurname").html(nameSurname)
 	$("#bigNameSurname").text(nameSurname)
@@ -37,11 +44,17 @@ $(document).ready( function () {
     // My Profile
     // Change password
     $('#dropdownChangePass').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.change-password').show()
     })
     // Logout
     $('#dropdownLogout').click(function() {
+    	if(!logger){
+    		return;
+    	}
     	$.ajax({
     		type : "GET",
     		async: false,
@@ -66,6 +79,9 @@ $(document).ready( function () {
     })
     // Home Page
     $('#homePage').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.home-page').show()
         $('#clinicProfile').removeClass('active-sub')
@@ -76,6 +92,9 @@ $(document).ready( function () {
     
     /* Clinical center administrator */
      $('.cca-profile').click(function() {
+    	 if(!logger){
+     		return;
+     	}
         $('.content').hide()
         $('.clinical-centre-admin-profile').show()
         document.body.scrollTop = 0
@@ -83,6 +102,9 @@ $(document).ready( function () {
     })
     // Clinics
     $('#clinics').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinics').show()
         document.body.scrollTop = 0
@@ -90,6 +112,9 @@ $(document).ready( function () {
     })
     // Clinic admins
     $('#clinicAdmins').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinic-admins').show()
         document.body.scrollTop = 0
@@ -97,6 +122,9 @@ $(document).ready( function () {
     })
     // Center admins
     $('#centerAdmins').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.center-admins').show()
         document.body.scrollTop = 0
@@ -104,6 +132,9 @@ $(document).ready( function () {
     })
     // Registration requests
     $('#registrationReq').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.registration-req').show()
         document.body.scrollTop = 0
@@ -111,6 +142,9 @@ $(document).ready( function () {
     })
     // Code books
     $('#codeBooks').click(function() {
+    	if(!logger){
+    		return;
+    	}
         if ($(this).hasClass('active-sub')) {
             $(this).removeClass('active-sub')
             $('#sub').hide("slow")
@@ -162,6 +196,9 @@ $(document).ready( function () {
     
     //Clinical centre admin profile
      $('.ca-profile').click(function() {
+    	 if(!logger){
+     		return;
+     	}
         $('.content').hide()
         $('.clinic-admin-profile').show()
         document.body.scrollTop = 0
@@ -169,6 +206,9 @@ $(document).ready( function () {
     })
     // Clinic profile
     $('#clinicProfile').click(function() {
+    	if(!logger){
+    		return;
+    	}
         if ($(this).hasClass('active-sub')) {
             $(this).removeClass('active-sub')
             $('#sub').hide("slow")
@@ -228,6 +268,9 @@ $(document).ready( function () {
     })
     // Create appointment
     $('#createClinicApp').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinic-createClinicApp').show()
         $('#clinicProfile').removeClass('active-sub')
@@ -237,6 +280,9 @@ $(document).ready( function () {
     })
     // Clinic reports
     $('#clinicReports').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinic-reports').show()
         $('#clinicProfile').removeClass('active-sub')
@@ -246,6 +292,9 @@ $(document).ready( function () {
     })
     // Clinic examination requests
     $('#clinicExamReq').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinic-clinicExamReq').show()
         $('#clinicProfile').removeClass('active-sub')
@@ -255,6 +304,9 @@ $(document).ready( function () {
     })
 	// Clinic operation requests
     $('#clinicOperReq').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.clinic-clinicOperReq').show()
         $('#clinicProfile').removeClass('active-sub')
@@ -264,6 +316,9 @@ $(document).ready( function () {
     })
     // Clinic vacation/paid leave
     $('#clinicVacation').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('#clinicProfile').removeClass('active-sub')
         $('#sub').hide("slow")
@@ -290,6 +345,9 @@ $(document).ready( function () {
     /* Medical personnel */
     // Medical personnel calendar
     $('#medicalCalendar').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.medical-calendar').show()
         document.body.scrollTop = 0
@@ -297,6 +355,9 @@ $(document).ready( function () {
     })
     // Medical personnel vacation
     $('#medicalVacation').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.medical-vacation').show()
         document.body.scrollTop = 0
@@ -306,6 +367,9 @@ $(document).ready( function () {
     /* Doctor */
     // Doctor profile
     $('.d-profile').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.doctor-profile').show()
         document.body.scrollTop = 0
@@ -323,6 +387,9 @@ $(document).ready( function () {
     
     //Nurse profile
      $('.n-profile').click(function() {
+    	 if(!logger){
+     		return;
+     	}
         $('.content').hide()
         $('.nurse-profile').show()
         document.body.scrollTop = 0
@@ -330,6 +397,9 @@ $(document).ready( function () {
     })
     // Nurse verify prescription
     $('#nurseVerifyPrescription').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.nurse-verifyPrescription').show()
         document.body.scrollTop = 0
@@ -337,6 +407,9 @@ $(document).ready( function () {
     })
     // Nurse patients
     $('#nursePatients').click(function() {
+    	if(!logger){
+    		return;
+    	}
         $('.content').hide()
         $('.nurse-patients').show()
         document.body.scrollTop = 0
@@ -459,4 +532,45 @@ function calendarFill(){
 		}
 	});
 	return eventsToAdd;
+}
+
+function isLogged(){
+	$.ajax({
+		type : "GET",
+		async: false,
+		url : "../../theGoodShepherd/loggedUser/current" ,
+		dataType: "json",
+		success : function(output)  {
+			if(output.logged == false){
+				logger = false;
+			}
+			else{
+				logger = true;
+			}
+		},
+		error : function(response) {
+			alert(response.responseJSON.message)
+		}
+	})
+}
+
+function isUserLogged(){
+	$.ajax({
+		type : "GET",
+		async: false,
+		url : "../../theGoodShepherd/loggedUser" ,
+		dataType: "json",
+		success : function(output)  {
+			if(output.logged != null && output.logged == false){
+				$('.content').hide()
+				$('.change-password').show()
+				$('#cancelChangePasswordBtn').hide()
+				alert("You neeed to change your password on your first login!");
+			}
+		},
+		error : function(response) {
+			alert(response.responseJSON.message)
+			window.location.href = "../../index.html"
+		}
+	})
 }
